@@ -1,0 +1,80 @@
+# ── Node ─────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json.bak
+.npmrc.local
+
+# ── TypeScript ────────────────────────────────────────────────────────────────
+dist/
+build/
+*.tsbuildinfo
+*.js.map
+
+# ── Playwright ────────────────────────────────────────────────────────────────
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+blob-report/
+.cache/
+
+# ── Environment / Secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.staging
+.env.production
+
+# ── Docker ───────────────────────────────────────────────────────────────────
+docker-compose.override.yml
+.docker/
+
+# ── Kubernetes ───────────────────────────────────────────────────────────────
+k8s/secret.yaml
+k8s/*.secret.yaml
+
+# ── Documentation (local design notes, not for repo) ─────────────────────────
+/documentation/
+ProseHire_QA/documantation/*
+
+# ── Claude AI ────────────────────────────────────────────────────────────────
+.claude/
+.claude_history
+.clauderc
+CLAUDE.md
+claude.json
+.claude-settings/
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── IDE / Editors ────────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ── Coverage ─────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# -── Miscellaneous ───────────────────────────────────────────────────────────
+
