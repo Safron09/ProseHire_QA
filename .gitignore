@@ -38,7 +38,7 @@ k8s/*.secret.yaml
 
 # ── Documentation (local design notes, not for repo) ─────────────────────────
 /documentation/
-ProseHire_QA/documantation/*
+documantation/
 
 # ── Claude AI ────────────────────────────────────────────────────────────────
 .claude/
