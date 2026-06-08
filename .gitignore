@@ -77,5 +77,18 @@ logs/
 coverage/
 .nyc_output/
 
+# ── Python ───────────────────────────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+pip-log.txt
+pip-delete-this-directory.txt
+
 # -── Miscellaneous ───────────────────────────────────────────────────────────
 
