@@ -1,5 +1,10 @@
 # ProseHire QA Framework
 
+> **Portfolio project.** Built to demonstrate SDET and DevOps skills across the full
+> quality-engineering stack. The framework intentionally layers in tools like Docker,
+> Kubernetes, and GitHub Actions — not because every project needs all of them, but
+> to show hands-on experience with each technology in a realistic, production-like context.
+
 Production test suite for ProseHire — a live Django SaaS application.
 
 Covers UI, API, and database validation layers using Python, Playwright, and PyTest. 
