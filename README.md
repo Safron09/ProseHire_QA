@@ -27,3 +27,38 @@ Python · Playwright · PyTest · Requests · GitHub Actions
 ## Environments
 
 Configured via `BASE_URL` environment variable. See `.env.example` for required variables.
+
+## To Do
+
+**Infrastructure**
+- [ ] GitHub Actions — CI pipeline running smoke tests on every push
+- [ ] GitHub Actions — scheduled weekly full regression run
+- [ ] Docker — containerize test runner using official Playwright image
+- [ ] Docker Compose — single command local test execution
+- [ ] Kubernetes — Job manifest to trigger test container on demand
+- [ ] Allure Report — publish HTML test results to GitHub Pages (considering)
+
+**UI Tests**
+- [ ] Registration — full form validation (invalid email, weak password, duplicate account)
+- [ ] Login — valid credentials, invalid credentials, locked account
+- [ ] Dashboard — loads correctly after login, key elements visible
+- [ ] Navigation — all nav links resolve, no broken routes
+
+**API Tests**
+- [ ] Auth endpoints — register, login, token refresh, logout
+- [ ] Protected routes — return 401 without token, 403 with wrong role
+- [ ] Job listings — GET returns correct schema, pagination works
+- [ ] Error responses — correct status codes and error message format
+
+**Security Tests**
+- [ ] Security headers — CSP, X-Frame-Options, HSTS present on all pages
+- [ ] Auth enforcement — protected pages redirect unauthenticated users
+- [ ] Input validation — XSS, SQL injection attempts handled safely
+- [ ] Rate limiting — login endpoint blocks brute force attempts
+- [ ] Prompt Ijections
+- [ ] SQLi
+ 
+**DB Tests**
+Current project has hard delete. Meaning every user can register same email and credentials
+- [ ] User creation — record persists correctly after registration
+- [ ] Data cleanup — test data teardown after each run
