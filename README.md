@@ -25,5 +25,5 @@ Python · Playwright · PyTest · Requests · GitHub Actions
   vulnerability scenarios
 
 ## Environments
-- Staging: https://prosehire-secret.com
-- Production: https://prosehire.com
+
+Configured via `BASE_URL` environment variable. See `.env.example` for required variables.
