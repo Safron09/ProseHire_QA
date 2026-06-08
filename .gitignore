@@ -39,6 +39,7 @@ k8s/*.secret.yaml
 # ── Documentation (local design notes, not for repo) ─────────────────────────
 /documentation/
 documantation/
+documantation/design.md
 
 # ── Claude AI ────────────────────────────────────────────────────────────────
 .claude/
