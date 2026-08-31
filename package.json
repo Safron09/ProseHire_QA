@@ -1,7 +1,7 @@
 {
-  "name": "prosehire_qa",
+  "name": "yuriysafron_qa",
   "version": "1.0.0",
-  "description": "Production test suite for ProseHire — a live Django SaaS application.",
+  "description": "Test suite for yuriysafron.com — a personal portfolio site with a live QA sandbox.",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",

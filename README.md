@@ -1,32 +1,29 @@
-# ProseHire QA Framework
+# yuriysafron.com QA Framework
 
  **Portfolio project.** Built to demonstrate SDET and DevOps skills across the full
  quality-engineering stack. The framework intentionally layers in tools like Docker,
  Kubernetes, and GitHub Actions — not because every project needs all of them, but
  to show hands-on experience with each technology in a realistic, production-like context.
 
-Production test suite for ProseHire — a live Django SaaS application.
+Test suite for yuriysafron.com — a personal portfolio site with a live QA sandbox
+(vulnerability playground), profile card, and quiz modules.
 
-Covers UI, API, and database validation layers using Python, Playwright, and PyTest. 
-Includes security-focused test scenarios: input validation, prompt injection, file 
-injection, and vulnerability testing across all user-facing surfaces.
-
-Integrated into GitHub Actions CI/CD with weekly scheduled runs and merge-triggered 
-runs against the staging environment before every release.
+Covers UI and security validation layers using Playwright and TypeScript. The site's
+`/qa-sandbox/` exposes dozens of intentional vulnerability scenarios (SQLi, XSS, IDOR,
+SSRF, XXE, CSRF, broken auth, mass assignment, and more) purpose-built for exercising
+a security automation suite against.
 
 ## Stack
-Python · Playwright · PyTest · Requests · GitHub Actions
+Playwright · TypeScript · Node.js
 
 ## Test Coverage
-- UI flows — end-to-end user journeys via Playwright
-- API layer — endpoint validation, schema checks, authentication flows
-- Database — data integrity validation across operations
-- Security — prompt injection, file injection, input boundary testing, 
-  vulnerability scenarios
+- UI flows — profile card, projects, quizzes navigation via Playwright
+- Security — scenarios against the `/qa-sandbox/` vulnerability playground
 
 ## Environments
 
 Configured via `BASE_URL` environment variable. See `.env.example` for required variables.
+No dedicated test/staging environment exists yet — tests currently target local dev only.
 
 ## To Do
 
@@ -39,26 +36,25 @@ Configured via `BASE_URL` environment variable. See `.env.example` for required 
 - [ ] Allure Report — publish HTML test results to GitHub Pages (considering)
 
 **UI Tests**
-- [ ] Registration — full form validation (invalid email, weak password, duplicate account)
-- [ ] Login — valid credentials, invalid credentials, locked account
-- [ ] Dashboard — loads correctly after login, key elements visible
-- [ ] Navigation — all nav links resolve, no broken routes
+- [ ] Home page — hero, skills, projects, principles, recommendations render correctly
+- [ ] Navigation — all section anchors and nav links resolve, no broken routes
+- [ ] Quizzes — ISTQB practice exam flow
 
-**API Tests**
-- [ ] Auth endpoints — register, login, token refresh, logout
-- [ ] Protected routes — return 401 without token, 403 with wrong role
-- [ ] Job listings — GET returns correct schema, pagination works
-- [ ] Error responses — correct status codes and error message format
-
-**Security Tests**
+**Security Tests** (against `/qa-sandbox/`)
+- [ ] SQL injection
+- [ ] XSS — reflected, DOM-based, script/CSS injection
+- [ ] CSRF
+- [ ] Broken auth / access control / IDOR
+- [ ] SSRF / XXE
+- [ ] Open redirect / CORS misconfiguration
+- [ ] File upload validation
 - [ ] Security headers — CSP, X-Frame-Options, HSTS present on all pages
-- [ ] Auth enforcement — protected pages redirect unauthenticated users
-- [ ] Input validation — XSS, SQL injection attempts handled safely
-- [ ] Rate limiting — login endpoint blocks brute force attempts
-- [ ] Prompt Ijections
-- [ ] SQLi
- 
+
+**Auth Tests**
+On hold — no dedicated test/staging environment exists yet, so flows that create
+real accounts (signup/login) shouldn't run against production until one is set up.
+
 **DB Tests**
-Current project has hard delete. Meaning every user can register same email and credentials
-- [ ] User creation — record persists correctly after registration
-- [ ] Data cleanup — test data teardown after each run
+On hold — app currently runs on local SQLite during development, and the whole
+application is planned to migrate to AWS. DB test tooling will be revisited after
+that migration lands.

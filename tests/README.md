@@ -1,20 +1,25 @@
-# Tests — ProseHire QA Framework
+# Tests — yuriysafron.com QA Framework
 
-This folder contains all automated tests for [ProseHire](https://prosehire.com) — a live Django SaaS application.  
-The framework is built with **Playwright + TypeScript**.
+This folder contains all automated tests for [yuriysafron.com](https://yuriysafron.com) — a
+personal portfolio site with a built-in QA sandbox. The framework is built with
+**Playwright + TypeScript**.
 
 ---
 
 ## My thought process
 
-When I designed this test suite, the goal was to cover the application across all layers — not just UI clicks, but also the API contract, database integrity, and security boundaries. Each layer catches different types of failures:
+When I designed this test suite, the goal was to cover the application across all layers — not
+just UI clicks, but also the API contract, database integrity, and security boundaries. Each
+layer catches different types of failures:
 
 - **UI tests** catch broken user journeys — things a real user would notice
 - **API tests** catch backend contract issues without needing a browser — faster and more precise
 - **DB tests** catch data integrity problems that neither the UI nor API expose
-- **Security tests** catch auth gaps, injection vectors and header misconfigurations
+- **Security tests** catch auth gaps, injection vectors and header misconfigurations — the site's
+  `/qa-sandbox/` is purpose-built with dozens of live vulnerability scenarios for this layer
 
-Tests are organized by type so you can run only what you need depending on the situation (quick smoke check before a release vs. full regression).
+Tests are organized by type so you can run only what you need depending on the situation (quick
+smoke check before a release vs. full regression).
 
 ---
 
@@ -54,7 +59,7 @@ A test can have multiple tags: `@ui @smoke @regression`
 
 ## How to run tests
 
-> Make sure you have a `.env` file at the project root with `BASE_URL` set.  
+> Make sure you have a `.env` file at the project root with `BASE_URL` set.
 > See `.env.example` for the required variables.
 
 ```bash
@@ -72,9 +77,6 @@ npm run test:headed
 
 # Slow down each action by 1 second so you can follow what's happening
 SLOW_MO=1000 npx playwright test --headed
-
-# Run a single test file
-npx playwright test tests/ui/HomePage.spec.ts --project=chromium
 
 # Run by tag
 npx playwright test --grep @smoke
