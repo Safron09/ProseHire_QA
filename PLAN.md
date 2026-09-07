@@ -84,4 +84,12 @@ covers what I will want to add later without changing platform again.
 
 ## Deliberately not doing
 
-
+| Not doing | Why |
+|---|---|---|
+| EKS in production | $73/month control plane to schedule three containers that never need rescheduling |
+| Load balancer | $16/month, more than the instance it would front |
+| Heroku as staging | CI provides the same thing free and closer to production |
+| Multi-AZ, autoscaling | No availability requirement that justifies the cost |
+| AWS WAF | ~$8/month, would nearly double the bill |
+ 
+---
