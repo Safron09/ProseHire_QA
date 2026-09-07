@@ -33,3 +33,6 @@ harder to find.
 ---
 
 ## Entries
+09/07/2026 - Documentation and planning. Strategy over Tactics. I already know which AWS tools 
+I want to use, for now.  EC2, IAM, CloudFront, S3, SES, Lmbda, Stepfunction, Budgets, Terraform, 
+EventBridge, security groups, logs

@@ -28,28 +28,16 @@ SHA. This repo pulls that exact image and tests it. Production runs the same ima
 what passes CI is byte-identical to what serves traffic.
 
 
-### The reasoning, one layer at a time
+### The reasoning
 Some decidions are not yet complete.
 
-**EC2 over a dyno.**
+## Why AWS
+ 
+Better pricing and tiering. I pay per resource and size each one myself instead of buying
+a bundled dyno tier, and most of what this project needs falls inside always-free
+allowances. Beyond price, everything is measurable and attributable, and the service range
+covers what I will want to add later without changing platform again.
 
-**Containers over buildpacks.**
-
-**Self-hosted Postgres over Heroku Postgres.**
-Not sure what DB I want. Project is in dvelopment, maybe it will be object, file or block
-
-**CloudFront over the Heroku router.**
-
-**S3 for static and media over the dyno filesystem.**
-Herouks ephemeral filesystem - no, tnx
-
-**Session Manager over `heroku run bash`.**
-
-**Terraform over the console.**
-
-**SES over an email add-on.**
-
-**Ephemeral test environments over a staging server.**
 
 
 ## Approximate Phases

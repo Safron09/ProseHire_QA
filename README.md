@@ -24,7 +24,13 @@ in progress and none of it is built yet.
  
 ## What exists today
 
-Nothing. I'll update as I go (still hosted on heroku and app is running, but no QA part yet)
+Playwright and TypeScript, running against a local development instance.
+
+UI flows. Profile card, projects, and quiz navigation.
+
+Security scenarios. The site's /qa-sandbox/ exposes dozens of deliberate vulnerabilities (SQLi, XSS, IDOR, SSRF, XXE, CSRF, broken auth, mass assignment, and more), purpose-built as a target for a security automation suite.
+
+That is the honest scope right now. Everything else on the roadmap, CI, containers, Kubernetes, database and auth coverage, reporting, is planned rather than built.
 
 ---
 
@@ -43,6 +49,19 @@ Playwright · TypeScript · Node.js
 | [`docs/architecture.md`](docs/architecture.md) | Target AWS architecture and the cost reasoning behind it |
 | [`docs/starting-stack.md`](docs/starting-stack.md) | Why the pre-migration stack was chosen |
  
+---
+
+## Running it
+
+```bash
+npm install
+cp .env.example .env    # set BASE_URL
+npx playwright test
+```
+ 
+Target environment is controlled by `BASE_URL`. There is no dedicated test or staging
+environment yet, so tests currently point at local dev only. Building one is Phase 6 of
+the plan.
 ---
 
 ## About this project
