@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Safron09/ProseHire_QA.git"
+    "url": "git+https://github.com/Safron09/YuriySafron_QA.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Safron09/ProseHire_QA/issues"
+    "url": "https://github.com/Safron09/YuriySafron_QA/issues"
   },
-  "homepage": "https://github.com/Safron09/ProseHire_QA#readme",
+  "homepage": "https://github.com/Safron09/YuriySafron_QA#readme",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.2",

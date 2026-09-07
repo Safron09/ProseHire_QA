@@ -1,60 +1,56 @@
 # yuriysafron.com QA Framework
+ 
+Test suite and infrastructure for [yuriysafron.com](https://yuriysafron.com), a personal
+portfolio site with a live QA sandbox, profile card, and quiz modules.
+ 
+This repository is the public half of a two-repo project. The Django application lives in
+a private repo. Everything about how it is tested, containerized, deployed, and reasoned
+about lives here.
+ 
+---
+ 
+## Project context
+ 
+| Repo | Visibility | Holds |
+|---|---|---|
+| `yuriy_safronnynov_webapp` | Private | Django application source |
+| `YuriySafron_QA` | Public | Test framework, infrastructure, pipeline, project docs |
+ 
+The site is currently a Django app on Heroku with Postgres. It is being migrated to AWS,
+containerized, and put behind a pipeline where a QA run gates every deploy. That work is
+in progress and none of it is built yet.
+ 
+---
+ 
+## What exists today
 
- **Portfolio project.** Built to demonstrate SDET and DevOps skills across the full
- quality-engineering stack. The framework intentionally layers in tools like Docker,
- Kubernetes, and GitHub Actions — not because every project needs all of them, but
- to show hands-on experience with each technology in a realistic, production-like context.
+Nothing. I'll update as I go (still hosted on heroku and app is running, but no QA part yet)
 
-Test suite for yuriysafron.com — a personal portfolio site with a live QA sandbox
-(vulnerability playground), profile card, and quiz modules.
-
-Covers UI and security validation layers using Playwright and TypeScript. The site's
-`/qa-sandbox/` exposes dozens of intentional vulnerability scenarios (SQLi, XSS, IDOR,
-SSRF, XXE, CSRF, broken auth, mass assignment, and more) purpose-built for exercising
-a security automation suite against.
+---
 
 ## Stack
+ 
 Playwright · TypeScript · Node.js
 
-## Test Coverage
-- UI flows — profile card, projects, quizzes navigation via Playwright
-- Security — scenarios against the `/qa-sandbox/` vulnerability playground
+---
 
-## Environments
+## Documentation
+ 
+| Document | Contents |
+|---|---|
+| [`PLAN.md`](PLAN.md) | Roadmap, phase status, tool decisions, and what is deliberately not being built |
+| [`JOURNAL.md`](JOURNAL.md) | Dated decision log, appended as the work happens |
+| [`docs/architecture.md`](docs/architecture.md) | Target AWS architecture and the cost reasoning behind it |
+| [`docs/starting-stack.md`](docs/starting-stack.md) | Why the pre-migration stack was chosen |
+ 
+---
 
-Configured via `BASE_URL` environment variable. See `.env.example` for required variables.
-No dedicated test/staging environment exists yet — tests currently target local dev only.
-
-## To Do
-
-**Infrastructure**
-- [ ] GitHub Actions — CI pipeline running smoke tests on every push
-- [ ] GitHub Actions — scheduled weekly full regression run
-- [ ] Docker — containerize test runner using official Playwright image
-- [ ] Docker Compose — single command local test execution
-- [ ] Kubernetes — Job manifest to trigger test container on demand
-- [ ] Allure Report — publish HTML test results to GitHub Pages (considering)
-
-**UI Tests**
-- [ ] Home page — hero, skills, projects, principles, recommendations render correctly
-- [ ] Navigation — all section anchors and nav links resolve, no broken routes
-- [ ] Quizzes — ISTQB practice exam flow
-
-**Security Tests** (against `/qa-sandbox/`)
-- [ ] SQL injection
-- [ ] XSS — reflected, DOM-based, script/CSS injection
-- [ ] CSRF
-- [ ] Broken auth / access control / IDOR
-- [ ] SSRF / XXE
-- [ ] Open redirect / CORS misconfiguration
-- [ ] File upload validation
-- [ ] Security headers — CSP, X-Frame-Options, HSTS present on all pages
-
-**Auth Tests**
-On hold — no dedicated test/staging environment exists yet, so flows that create
-real accounts (signup/login) shouldn't run against production until one is set up.
-
-**DB Tests**
-On hold — app currently runs on local SQLite during development, and the whole
-application is planned to migrate to AWS. DB test tooling will be revisited after
-that migration lands.
+## About this project
+ 
+Built to demonstrate SDET and DevOps skills across the full quality-engineering stack.
+Some tooling here is deliberately more than a site this size needs, because the point is
+hands-on experience in a realistic context rather than a minimal solution.
+ 
+Where that trade is made, it is stated. `PLAN.md` has a section on what is deliberately
+not being built and why, including the parts where the impressive-looking option was the
+wrong one. If you have anyquestions, send me a message on Linkedin (https://www.linkedin.com/in/yuriy-safronnynov/)
