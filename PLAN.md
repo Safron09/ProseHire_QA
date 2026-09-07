@@ -38,7 +38,34 @@ a bundled dyno tier, and most of what this project needs falls inside always-fre
 allowances. Beyond price, everything is measurable and attributable, and the service range
 covers what I will want to add later without changing platform again.
 
-
+## Why these tools
+ 
+| Tool | Why |
+|---|---|
+| EC2 | More control over what I run. I manage the infrastructure. |
+| Docker | One artifact across dev, CI, and production. Consistency. |
+| Database | Not yet decided. Depends on the features I add. |
+| CloudFront + ACM | TLS that renews itself, caching, edge security headers, origin not directly reachable. |
+| S3 | Static files, media, backups, test reports. Uploads survive a restart. |
+| SSM Parameter Store | Config and secrets. Versioned, IAM-scoped, and every read is auditable. |
+| SSM Session Manager | Shell access with no open SSH port, no keys, and sessions logged. |
+| GitHub Actions + OIDC | I am familiar with it and I do not need an extra layer |
+| Terraform | All infrastructure. Rebuildable from code, reviewable as a diff. |
+| SES | Email, with bounce and complaint handling I control. |
+| CloudWatch | Host-level metrics, logs, and alarms in one place. |
+| Lambda | Small jobs that do not need a server sitting there. Sending the newsletter, handling bounces, scheduled work. |
+| EventBridge Scheduler | Runs the newsletter and any other recurring job on a schedule. |
+| SQS | Holds newsletter sends in a queue so a big batch does not tie up the web server. |
+| SNS | Tells me when mail bounces or gets a complaint, so the list stays clean. |
+| ECR | Stores the container image the pipeline builds. |
+| IAM | Roles and permissions. |
+| CloudTrail | Records every API call, so I can see what changed and when. |
+| Budgets + Cost Anomaly Detection | Alerts me on spend before it turns into a surprise. |
+| CloudWatch | Runs the login journey every hour and tells me if the site breaks between deploys. |
+| Data Lifecycle Manager | Takes EBS snapshots on a schedule. |
+| Route 53 | DNS, if I move it off the registrar. Still deciding. |
+ 
+---
 
 ## Approximate Phases
 # Subject to edit
