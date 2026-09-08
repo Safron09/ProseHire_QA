@@ -38,7 +38,8 @@ k8s/*.secret.yaml
 
 # ── Documentation (local design notes, not for repo) ─────────────────────────
 /documentation/
-ProseHire_QA/documantation/*
+documantation/
+documantation/design.md
 
 # ── Claude AI ────────────────────────────────────────────────────────────────
 .claude/
@@ -75,6 +76,19 @@ logs/
 # ── Coverage ─────────────────────────────────────────────────────────────────
 coverage/
 .nyc_output/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+pip-log.txt
+pip-delete-this-directory.txt
 
 # -── Miscellaneous ───────────────────────────────────────────────────────────
 

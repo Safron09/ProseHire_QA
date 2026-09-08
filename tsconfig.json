@@ -1,15 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "lib": ["ES2022", "DOM", "esnext.disposable"],
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
-    "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@fixtures/*": ["src/fixtures/*"],
-      "@utils/*": ["src/utils/*"]
-    },
+    "types": ["node"],
     "outDir": "dist",
     "rootDir": "."
   },

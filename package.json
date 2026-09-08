@@ -1,35 +1,35 @@
 {
-  "name": "prosehire_qa",
+  "name": "yuriysafron_qa",
   "version": "1.0.0",
-  "description": "Production test suite for ProseHire — a live Django SaaS application.",
+  "description": "Test suite for yuriysafron.com — a personal portfolio site with a live QA sandbox.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:api": "playwright test --grep @api",
+    "test:security": "playwright test --grep @security",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Safron09/ProseHire_QA.git"
+    "url": "git+https://github.com/Safron09/YuriySafron_QA.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Safron09/ProseHire_QA/issues"
+    "url": "https://github.com/Safron09/YuriySafron_QA/issues"
   },
-  "homepage": "https://github.com/Safron09/ProseHire_QA#readme",
+  "homepage": "https://github.com/Safron09/YuriySafron_QA#readme",
+  "dependencies": {
+    
+  },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.2",
+    "dotenv": "^17.4.2",
     "typescript": "^6.0.3"
-  },
-  "scripts": {
-  "test":          "playwright test",
-  "test:smoke":    "playwright test --grep @smoke",
-  "test:api":      "playwright test --grep @api",
-  "test:security": "playwright test --grep @security",
-  "test:headed":   "playwright test --headed",
-  "report":        "playwright show-report"
-}
-
+  }
 }
