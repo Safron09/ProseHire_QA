@@ -36,3 +36,7 @@ harder to find.
 09/07/2026 - Documentation and planning. Strategy over Tactics. I already know which AWS tools 
 I want to use, for now.  EC2, IAM, CloudFront, S3, SES, Lmbda, Stepfunction, Budgets, Terraform, 
 EventBridge, security groups, logs
+
+09/08/2026 - Chose IAM Identity Center over a plain IAM user for admin access. Both work, but a plain IAM user means permanent access keys sitting in ~/.aws/credentials, and Terraform runs with whatever credentials it finds. Identity Center gives an 8 hour session instead, refreshed with
+`aws sso login`. Nothing long-lived on the laptop. Of course added groups and users. Gotta share
+that root.

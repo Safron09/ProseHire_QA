@@ -48,10 +48,11 @@ Every test is tagged so you can run a targeted subset.
 |---|---|
 | `@smoke` | Quick sanity — run before every deploy |
 | `@ui` | Full browser flows |
-| `@api` | API contract tests |
+| `@api` | API tests |
 | `@db` | Database validation |
 | `@security` | Security-focused scenarios |
 | `@regression` | Full regression suite |
+| `@HomePage` |  Page Specific tests
 
 A test can have multiple tags: `@ui @smoke @regression`
 
