@@ -72,7 +72,7 @@ covers what I will want to add later without changing platform again.
  
 | # | Scope | Status |
 |---|---|---|
-| 1 | AWS account, certificates, mail domain | Not started |
+| 1 | AWS account, certificates, mail domain | Done |
 | 2 | Containerize the application | Not started |
 | 3 | Infrastructure as code | Not started |
 | 4 | Cutover from Heroku | Not started |

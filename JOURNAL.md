@@ -40,3 +40,6 @@ EventBridge, security groups, logs
 09/08/2026 - Chose IAM Identity Center over a plain IAM user for admin access. Both work, but a plain IAM user means permanent access keys sitting in ~/.aws/credentials, and Terraform runs with whatever credentials it finds. Identity Center gives an 8 hour session instead, refreshed with
 `aws sso login`. Nothing long-lived on the laptop. Of course added groups and users. Gotta share
 that root.
+
+09/10/2026 - Hiccup with old user for aws, since I am using sso, just simply deleted all old 
+credentials and set up SSN for anomaly detection
