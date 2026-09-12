@@ -32,6 +32,20 @@ blob-report/
 docker-compose.override.yml
 .docker/
 
+# ── Terraform ────────────────────────────────────────────────────────────────
+.envrc
+**/.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
 # ── Kubernetes ───────────────────────────────────────────────────────────────
 k8s/secret.yaml
 k8s/*.secret.yaml
