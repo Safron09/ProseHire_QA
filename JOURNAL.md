@@ -43,3 +43,5 @@ that root.
 
 09/10/2026 - Hiccup with old user for aws, since I am using sso, just simply deleted all old 
 credentials and set up SSN for anomaly detection
+
+09/12/2026 - I had to set up > 1 user for my machine and add dynamic variables and guardrails for terraform to avoid mistakes and bugs with different users and accesses to AWS. Creating, just in case .dockerignore for QA project. It is public, I think it is better be safe. Decided to do practive terraform, before accessing real aws
